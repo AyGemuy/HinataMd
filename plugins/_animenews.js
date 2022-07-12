@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export async function before(m) {
-	let chat = db.data.chats[m.chat] || {}
+	let chat = global.db.data.chats[m.chat] || {}
 	if (!chat.latestNews) chat.latestNews = []
 	if (chat && chat.updateAnimeNews) {
 		let latest = chat.latestNews

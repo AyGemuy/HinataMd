@@ -4,7 +4,7 @@ import { lookup } from 'mime-types'
 import { extract } from 'zs-extract'
 
 export async function before(m) {
-	let chat = db.data.chats[m.chat] || {}
+	let chat = global.db.data.chats[m.chat] || {}
 	if (!chat.lastAnime) chat.lastAnime = []
 	if (chat && chat.updateAnime) {
 		let lastAnime = chat.lastAnime
