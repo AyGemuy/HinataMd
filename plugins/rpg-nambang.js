@@ -6,7 +6,7 @@ let handler = async (m, {
 	let __timers = (new Date - user.lastmining)
 	let _timers = (500000 - __timers)
 	let timers = clockString(_timers)
-	let user = db.data.users[m.sender]
+	let user = global.db.data.users[m.sender]
 	if (user.pickaxe < 1) return m.reply(`*Kamu tidak memiliki Pickaxe*\n*Silahkan membeli Pickaxe si shop dengan mengetik _${usedPrefix}buy pickaxe_ atau _${usedPrefix}craft pickaxe_ agar kamu bisa nambang*`)
     if (user.pickaxedurability < 10) return m.reply(`Durability pickaxe anda kurang\nSilahkan repair pickaxe agar bisa nambang dengan menggunakan command _${usedPrefix}repair pickaxe_`)
     if (user.stamina < 20) return m.reply(`Stamina anda tidak cukup untuk bekerja\nharap isi stamina anda dengan _#eat_`)

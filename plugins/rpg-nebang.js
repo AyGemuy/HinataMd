@@ -5,10 +5,10 @@ let handler = async (m, {
     let __timers = (new Date - global.db.data.users[m.sender].lastlumber)
     let _timers = (10800000 - __timers)
     let timers = clockString(_timers) 
-    let user = db.data.users[m.sender]
+    let user = global.db.data.users[m.sender]
     if (user.stamina < 20) return m.reply(`Stamina anda tidak cukup untuk bekerja\nharap isi stamina anda dengan _${usedPrefix}eat_`)
-    if (user.axe < 1) return m.reply(`*Kamu tidak memiliki pancing*\n*Silahkan membeli pancing si shop dengan mengetik _${usedPrefix}buy axe_ atau _${usedPrefix}craft axe_agar kamu bisa menebang*`)
-    if (user.axedurability < 10) return m.reply(`Durability pancing anda kurang\nSilahkam repair axe agar bisa berburu dengan menggunakan command _${usedPrefix}repair axe_`)
+    if (user.axe < 1) return m.reply(`Kamu tidak memiliki pancing\nSilahkan membeli pancing di shop dengan mengetik _${usedPrefix}buy_ atau _${usedPrefix}craft_ agar kamu bisa menebang`)
+    if (user.axedurability < 10) return m.reply(`Durability pancing anda kurang\nSilahkam repair axe agar bisa berburu dengan menggunakan command _${usedPrefix}repair_`)
     if (user.lastlumber > 500000) throw m.reply(`Kamu masih kelelahan untuk Menebang\nHarap tunggu ${timers} lagi untuk berburu`)
 	user.axedurability -= 5
 	user.stamina -= 20
@@ -21,23 +21,23 @@ let handler = async (m, {
                      }, 30000) 
                      
                      setTimeout(() => {
-                     m.reply(`*Mengecek hasil*`)
+                     m.reply(`_Mengecek hasil_`)
                      }, 20000) 
                
                      setTimeout(() => {
-                     m.reply(`*Menaruh Ke Dalam Gudang*`)
+                     m.reply(`_Menaruh Ke Dalam Gudang_`)
                       }, 15000)
                     
                      setTimeout(() => {
-                     m.reply(`*Mengambil Batang Pohon*`)
+                     m.reply(`_Mengambil Batang Pohon_`)
                      }, 10000) 
                     
                      setTimeout(() => {
-                     m.reply(`*Nguenggg*`)
+                     m.reply(`_Nguenggg_`)
                      }, 5000) 
                      
                      setTimeout(() => {
-                     m.reply(`_*Proses Menebang...*_`)
+                     m.reply(`_Proses Menebang..._`)
                      }, 0)
 }
 handler.help = ['nebang']

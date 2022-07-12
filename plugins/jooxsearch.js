@@ -18,10 +18,7 @@ Img : ${v.images.url}
 Vip : *${v.vip_flag}*
       `.trim()
   }).filter(v => v).join('\n\n▣═━–〈 *SEARCH* 〉–━═▣\n\n')
-  //m.reply(teks)
-  await conn.sendButton(m.chat, teks, wm, null, [
-                ['Search!', `${usedPrefix + command}`]
-            ], m)
+  m.reply(teks)
             }
 
 if (command == 'jooxp') {

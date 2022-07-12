@@ -43,7 +43,8 @@ let td = 'application/vnd.openxmlformats-officedocument.wordprocessingml.documen
             ]
         }
         return await conn.sendMessage(m.chat, message)*/
-conn.reply(m.chat, info, m, { contextInfo: { externalAdReply: {title: global.wm, body: 'Sudah Angtif', sourceUrl: snh, thumbnail: fs.readFileSync('./thumbnail.jpg')  }}})
+await conn.reply(m.chat, info, m, { quoted: fgif, contextInfo: { externalAdReply: { showAdAttribution: true, title: botdate, body: bottime, sourceUrl: snh, thumbnail: fs.readFileSync('./thumbnail.jpg') }}})
+
 }
 handler.customPrefix = /^(tes|tess|test)$/i
 handler.command = new RegExp

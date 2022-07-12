@@ -12,18 +12,18 @@ let handler = async (m, {
 	switch (text) {
 		case "on":
 		case "enable":
-			let cek = db.data.chats[m.chat].reminder
+			let cek = global.db.data.chats[m.chat].reminder
 			if (cek) return conn.reply(m.chat, `*reminder telah aktif pada grup ini.*`, m)
 			await conn.sendPresenceUpdate('composing', m.chat)
-			db.data.chats[m.chat].reminder = true
+			global.db.data.chats[m.chat].reminder = true
 			conn.reply(m.chat, `*reminder berhasil diaktifkan.*`, m)
 			break
 		case "off":
 		case "disable":
-			let ce = db.data.chats[m.chat].reminder
+			let ce = global.db.data.chats[m.chat].reminder
 			if (!ce) return conn.reply(m.chat, `*reminder belum aktif pada grup ini.*`, m)
 			await conn.sendPresenceUpdate('composing', m.chat)
-			db.data.chats[m.chat].reminder = false
+			global.db.data.chats[m.chat].reminder = false
 			conn.reply(m.chat, `*reminder berhasil dimatikan.*`, m)
 			break
 		default:

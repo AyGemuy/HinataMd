@@ -1,5 +1,5 @@
 import fetch from "node-fetch"
-let handler = async(m, { conn, text }) => {
+let handler = async(m, { conn, usedPrefix, command, text }) => {
 
     if (!text) return conn.reply(m.chat, 'Masukan Command nya', m)
 
