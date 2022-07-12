@@ -64,7 +64,7 @@ export async function handler(chatUpdate) {
                     if (!isNumber(user.semangka)) user.semangka = 0
                     if (!isNumber(user.stroberi)) user.stroberi = 0
                 }
-              if (!user.lbars) user.lbars = '[▒▒▒▒▒▒▒▒▒]'
+              
               if (!'afkReason' in user) user.afkReason = ''
               if (!'BannedReason' in user) user.BannedReason = ''
               if (!'Banneduser' in user) user.Banneduser = false
@@ -75,8 +75,10 @@ export async function handler(chatUpdate) {
               if (!('kingdom' in user)) user.kingdom = true
               if (!('misi' in user)) user.misi = ''
               if (!('pasangan' in user)) user.pasangan = ''
+              if (!('premium' in user)) user.premium = false
               if (!('registered' in user)) user.registered = false
               if (!('role' in user)) user.role = 'Beginner'
+              if (!('sewa' in user)) user.sewa = false
               if (!('skill' in user)) user.skill = ''
               if (!('title' in user)) user.title = ''
               
@@ -255,11 +257,13 @@ export async function handler(chatUpdate) {
               if (!isNumber(user.lastwork)) user.lastwork = 0
               if (!isNumber(user.legendary)) user.legendary = 0
               if (!isNumber(user.lele)) user.lele = 0
-              if (!isNumber(user.lelebakar)) user.lelebakar = 0
               if (!isNumber(user.leleb)) user.leleb = 0
+              if (!isNumber(user.lelebakar)) user.lelebakar = 0
               if (!isNumber(user.leleg)) user.leleg = 0
               if (!isNumber(user.level)) user.level = 0
               if (!isNumber(user.limit)) user.limit = 10
+              if (!isNumber(user.limitjoinfree)) user.limitjoinfree = 1
+              if (!isNumber(user.limitjoinprem)) user.limitjoinprem = 0
               if (!isNumber(user.lion)) user.lion = 0
               if (!isNumber(user.lionexp)) user.lionexp = 0
               if (!isNumber(user.lionlastfeed)) user.lionlastfeed = 0
@@ -270,7 +274,6 @@ export async function handler(chatUpdate) {
               if (!isNumber(user.makanancentaur)) user.makanancentaur = 0
               if (!isNumber(user.makanangriffin)) user.makanangriffin = 0
               if (!isNumber(user.makanannaga)) user.makanannaga = 0
-              if (!isNumber(user.makananpet)) user.makananpet
               if (!isNumber(user.makananpet)) user.makananpet = 0
               if (!isNumber(user.makananphonix)) user.makananphonix = 0
               if (!isNumber(user.makananserigala)) user.makananserigala = 0
@@ -339,7 +342,6 @@ export async function handler(chatUpdate) {
               if (!isNumber(user.soda)) user.soda = 0
               if (!isNumber(user.sop)) user.sop = 0
               if (!isNumber(user.ssapi)) user.ssapi = 0
-              if (!isNumber(user.stamina)) user.stamina = 0
               if (!isNumber(user.stamina)) user.stamina = 100
               if (!isNumber(user.steak)) user.steak = 0
               if (!isNumber(user.stick)) user.stick = 0
@@ -373,6 +375,7 @@ export async function handler(chatUpdate) {
               if (!isNumber(user.wood)) user.wood = 0
               if (!isNumber(user.wortel)) user.wortel = 0
               
+              if (!user.lbars) user.lbars = '[▒▒▒▒▒▒▒▒▒]'
               if (!user.job) user.job = 'Pengangguran'
               if (!user.premium) user.premium = false
               if (!user.premium) user.premiumTime= 0
@@ -400,7 +403,6 @@ export async function handler(chatUpdate) {
                     as: 0,
                     atm: 0,
                     autolevelup: false,
-                    autolevelup: true,
                     axe: 0,
                     axedurability: 0,
                     ayam: 0,
@@ -488,7 +490,7 @@ export async function handler(chatUpdate) {
                     jagung: 0,
                     jagungbakar: 0,
                     jeruk: 0,
-                    job: 'Pengangguran', 
+                    job: 'Pengangguran' ,
                     kambing: 0,
                     kangkung: 0,
                     katana: 0,
@@ -498,7 +500,7 @@ export async function handler(chatUpdate) {
                     kentanggoreng: 0,
                     kepiting: 0,
                     kepitingbakar: 0,
-                    kerbau : 0,
+                    kerbau: 0,
                     korbanngocok: 0,
                     kubis: 0,
                     kucing: 0,
@@ -540,11 +542,11 @@ export async function handler(chatUpdate) {
                     lbars: '[▒▒▒▒▒▒▒▒▒]',
                     legendary: 0,
                     lele: 0,
-                    lelebakar: 0,
                     leleb: 0,
+                    lelebakar: 0,
                     leleg: 0,
                     level: 0,
-                    limit: 10,
+                    limit: 100,
                     limitjoinfree: 1,
                     limitjoinprem: 0,
                     lion: 0,
@@ -564,7 +566,7 @@ export async function handler(chatUpdate) {
                     mangga: 0,
                     misi: "",
                     money: 0,
-                    monyet : 0,
+                    monyet: 0,
                     mythic: 0,
                     naga: 0,
                     nagalastclaim: 0,
@@ -579,7 +581,7 @@ export async function handler(chatUpdate) {
                     pasangan: '',
                     paus: 0,
                     pausbakar: 0,
-                    pc : 0,
+                    pc: 0,
                     pepesikan: 0,
                     pet: 0,
                     phonix: 0,
@@ -611,10 +613,10 @@ export async function handler(chatUpdate) {
                     sapi: 0,
                     sapir: 0,
                     seedbayam: 0,
-                    seedbrokoli: 0, 
+                    seedbrokoli: 0 ,
                     seedjagung: 0,
                     seedkangkung: 0,
-                    seedkentang: 0, 
+                    seedkentang: 0 ,
                     seedkubis: 0,
                     seedlabu: 0,
                     seedtomat: 0,
@@ -629,7 +631,7 @@ export async function handler(chatUpdate) {
                     soda: 0,
                     sop: 0,
                     ssapi: 0,
-                    stamina : 100,
+                    stamina: 100,
                     steak: 0,
                     stick: 0,
                     strength: 30,
