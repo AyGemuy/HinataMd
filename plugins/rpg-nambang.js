@@ -7,8 +7,8 @@ let handler = async (m, {
 	let _timers = (500000 - __timers)
 	let timers = clockString(_timers)
 	let user = db.data.users[m.sender]
-	if (user.pickaxe < 1) return m.reply(`*Kamu tidak memiliki Pickaxe*\n*Silahkan membeli Pickaxe si shop dengan mengetik _${usedPrefix}buy pickaxe_ atau _${usedPrefix}craft pickaxe_ agar kamu bisa Mining*`)
-    if (user.pickaxedurability < 10) return m.reply(`Durability pickaxe anda kurang\nSilahkan repair pickaxe agar bisa Mining dengan menggunakan command _${usedPrefix}repair pickaxe_`)
+	if (user.pickaxe < 1) return m.reply(`*Kamu tidak memiliki Pickaxe*\n*Silahkan membeli Pickaxe si shop dengan mengetik _${usedPrefix}buy pickaxe_ atau _${usedPrefix}craft pickaxe_ agar kamu bisa nambang*`)
+    if (user.pickaxedurability < 10) return m.reply(`Durability pickaxe anda kurang\nSilahkan repair pickaxe agar bisa nambang dengan menggunakan command _${usedPrefix}repair pickaxe_`)
     if (user.stamina < 20) return m.reply(`Stamina anda tidak cukup untuk bekerja\nharap isi stamina anda dengan _#eat_`)
 	if (new Date - user.lastmining > 500000) {
 		let randomaku1 = `${Math.floor(Math.random() * 5)}`
@@ -43,7 +43,7 @@ let handler = async (m, {
 		wuis9 = `${rbrb9}`
 
 		hsl = `
-*《 Hasil Mining Kali Ini 》*
+*《 Hasil Nambang Kali Ini 》*
 
  *💎 = [ ${wuis1} ] Diamond*
  *⛓️ = [ ${wuis2} ] Iron*
@@ -89,14 +89,14 @@ let handler = async (m, {
 		}, 0)
 		user.lastmining = new Date * 1
 		user.pickaxedurability -= 5
-	} else conn.sendButton(m.chat, `\n*Sepertinya Anda Sudah Kecapekan*\n*Silahkan Istirahat Dulu sekitar ${timers}*\n*Untuk bisa melanjutkan Mining*\n`, author, null, [
+	} else conn.sendButton(m.chat, `\n*Sepertinya Anda Sudah Kecapekan*\n*Silahkan Istirahat Dulu sekitar ${timers}*\n*Untuk bisa melanjutkan Nambang*\n`, author, null, [
 		['Inventory', '/inv']
 	], m)
 	
 }
-handler.help = ['mining']
+handler.help = ['nambang']
 handler.tags = ['rpg']
-handler.command = /^(mining)$/i
+handler.command = /^(nambang)$/i
 export default handler
 
 function clockString(ms) {

@@ -1,4 +1,4 @@
-const isVirtex = /PLHIPS|๒|๑|ৡ|⃟|Đ.Δ.Μ/i // tambahin sendiri
+const isVirtex = /৭৭৭|๒๒๒|؋.ᄻ.ྜྷ.ᇸ.ྙ|๖ۣۜy๖ۣۜF๖ۣۜr๖|๑๑๑|৭৭৭৭৭৭৭৭|๑๑๑๑๑๑๑๑|ผิดุท้่เึางืผิดุท้่เึางื|๒๒๒๒๒๒๒๒|ผิดุท้่เึางืผิดุท้่เึางื|PLHIPS|๒|๑|ৡ|⃟|Đ.Δ.Μ/i // tambahin sendiri
 
 export async function before(m, { conn, isAdmin, isBotAdmin }) {
     if (m.isBaileys && m.fromMe)
@@ -25,6 +25,12 @@ export async function before(m, { conn, isAdmin, isBotAdmin }) {
    let regp = /(๒๒)/i
    let isVertexsThai= regp.exec(m.text)
    if (isVertexsThai && !m.fromMe) {
+   conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
+   }
+   
+   let regpz = /(৭৭৭|๒๒๒|؋.ᄻ.ྜྷ.ᇸ.ྙ|๖ۣۜy๖ۣۜF๖ۣۜr๖|๑๑๑|৭৭৭৭৭৭৭৭|๑๑๑๑๑๑๑๑|ผิดุท้่เึางืผิดุท้่เึางื|๒๒๒๒๒๒๒๒|ผิดุท้่เึางืผิดุท้่เึางื|PLHIPS|๒|๑|ৡ|⃟|Đ.Δ.Μ)/i
+   let isVertexsAll = regpz.exec(m.text)
+   if (isVertexsAll && !m.fromMe) {
    conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
    }
    
